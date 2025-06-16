@@ -13,8 +13,8 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     env:
-      DATACITE_USER: ${{ DATACITE_USER }}
-      DATACITE_P: ${{ DATACITE_P }}
+      DATACITE_USER: ${{ secrets.DATACITE_USER }}
+      DATACITE_P: ${{ secrets.DATACITE_P }}
 
     steps:
       - name: Checkout repository
