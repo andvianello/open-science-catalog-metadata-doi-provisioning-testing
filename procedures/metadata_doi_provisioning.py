@@ -20,8 +20,8 @@ from process_json import *
 data_cite_url_prod = "https://api.datacite.org"
 data_cite_url_test = "https://api.test.datacite.org"
 
-data_cite_user = os.getenv('DATACITE_USER')
-data_cide_p =  os.getenv('DATACITE_P')
+data_cite_user = os.getenv('env.DATACITE_USER')
+data_cide_p =  os.getenv('env.DATACITE_P')
 
 doi_prefix = "10.80823"
 
