@@ -49,7 +49,7 @@ jobs:
         run: |
           echo "📄 JSON file path ricevuto: '${{ steps.get_json.outputs.json_file }}'"
           if [ -n "${{ steps.get_json.outputs.json_file }}" ]; then
-            python metadata_doi_provisioning.py "${{ steps.get_json.outputs.json_file }}"
+            python ./procedures/metadata_doi_provisioning.py "${{ steps.get_json.outputs.json_file }}"
           else
             echo "⏭️ Nessun file JSON da elaborare, lo script non verrà eseguito."
           fi
