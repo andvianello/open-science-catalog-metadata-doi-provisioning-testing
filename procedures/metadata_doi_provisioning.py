@@ -196,6 +196,7 @@ def insertDoi(json_file_name, doi_val):
 
     with open(json_file_name, "w") as f_out:
       f_out.write(modified_json)
+      printLog("new file written to: " + json_file_name)
 
       return True
   except:
