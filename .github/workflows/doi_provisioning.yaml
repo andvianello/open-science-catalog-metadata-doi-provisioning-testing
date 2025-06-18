@@ -63,10 +63,15 @@ jobs:
           git config user.email "github-actions@github.com"
           echo "TEST new file" >> New_file.txt
           git add New_file.txt
-          git commit -m "upload new file"
-          git push
-          
-          # Aggiungi il secondo remote (usa un token se necessario)
-          git remote add secondary https://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@github.com/ESA-EarthCODE/open-science-catalog-doi-provisioning
-          git push secondary main
+          git commit -m "upload new file" || echo "Nessuna modifica da committare"
+
+          # Aggiungi il secondo remote (usa un token sicuro)
+          git remote add secondary https://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@github.com/ESA-EarthCODE/open-science-catalog-doi-provisioning.git
+
+          # Push al repository principale
+          git push origin main
+
+          # Push al repository secondario
+          git push secondary main
+
 
