@@ -65,3 +65,8 @@ jobs:
           git add New_file.txt
           git commit -m "upload new file"
           git push
+          
+          # Aggiungi il secondo remote (usa un token se necessario)
+          git remote add secondary https://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@github.com/ESA-EarthCODE/open-science-catalog-doi-provisioning
+          git push secondary main
+
