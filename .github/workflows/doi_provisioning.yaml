@@ -1,3 +1,4 @@
+
 name: Run DOI Provisioning
 
 on:
@@ -11,14 +12,10 @@ on:
 
 jobs:
   deploy:
-      permissions:
-        contents: write
+    permissions:
+      contents: write
 
-  run-script:
     runs-on: ubuntu-latest
-    env:
-      DATACITE_USER: ${{ secrets.DATACITE_USER }}
-      DATACITE_P: ${{ secrets.DATACITE_P }}
 
     steps:
       - name: Checkout repository
@@ -50,7 +47,6 @@ jobs:
             pip install -r requirements.txt
           else
             echo "⚠️ requirements.txt non trovato, salto l'installazione."
-          fi
 
       - name: Run metadata DOI provisioning script
         run: |
@@ -59,7 +55,6 @@ jobs:
             python ./procedures/metadata_doi_provisioning.py "${{ steps.get_json.outputs.json_file }}"
           else
             echo "⏭️ Nessun file JSON da elaborare, lo script non verrà eseguito."
-          fi
 
       - name: Commit and push changes
         run: |
@@ -77,5 +72,3 @@ jobs:
 
           # Push al repository secondario
           git push secondary main
-
-
