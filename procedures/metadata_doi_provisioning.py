@@ -24,6 +24,7 @@ data_cite_user = os.getenv('DATACITE_USER')
 data_cide_p =  os.getenv('DATACITE_P')
 
 doi_prefix = "10.80823"
+catalog_base_url = "https://opensciencedata.esa.int/products/"
 
 # todo: set the url to 'test' or 'production' environment
 data_cite_url = data_cite_url_test
@@ -32,7 +33,7 @@ log_active = False
 log_file = "metadata_doi_provisioning"
 
 # if 'True' writes the doi decorated json metadata to a new file -> used for testing
-writeMtdToNewFile = True
+writeMtdToNewFile = False
 
 # prints to stdout and to log file if active (log_active = True)
 def printLog(msg):
@@ -108,7 +109,7 @@ def postDoiReq(mtd_map):
         "types": {
           "resourceTypeGeneral": "resource_type_p"
         },
-        "url": "https://example.org"
+        "url": "url_p"
       }
     }
   }
@@ -122,6 +123,7 @@ def postDoiReq(mtd_map):
   req_obj = req_obj.replace("publ_year_p", f"{publ_year}")
   req_obj = req_obj.replace("resource_type_p", mtd_map["resource_type"])
   req_obj = req_obj.replace("publisher_p", mtd_map["publisher"])
+  req_obj = req_obj.replace("url_p", mtd_map["url"])
 
   #print("req_obj-> " + req_obj)
 
@@ -222,11 +224,32 @@ if __name__ == '__main__':
 
     printLog("parsing metadata...")
 
-    mtd_fields = process_json(file_to_reg)
+    mtd_fields_json = process_json(file_to_reg)
 
-    if not mtd_fields:
+    if not mtd_fields_json:
       printLog("unable to parse file")
       exit -1
+
+    publ_year = datetime.now().year
+
+    url_attr = catalog_base_url + mtd_fields_json.id + "/collection"
+
+    print("url_attr: " + url_attr)
+
+    mtd_fields =  {
+      "title": mtd_fields_json.title,
+      "description": mtd_fields_json.description,
+      "publ_year": publ_year,
+      "resource_type": "Dataset",
+      "producer": mtd_fields_json.providers[0].name,
+      "publisher": mtd_fields_json.providers[2].name,
+      "url": url_attr
+    }
+
+    doi_attr = getattr(mtd_fields_json, "sci:doi", None)
+
+    if(doi_attr != None and doi_attr != ""):
+        mtd_fields["doi"] = doi_attr
 
     #printLog("mtd_fields: ")
     #printLog(mtd_fields)
