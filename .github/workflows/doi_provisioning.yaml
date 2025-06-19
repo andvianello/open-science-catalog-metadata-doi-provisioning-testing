@@ -12,6 +12,10 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     env:
       DATACITE_USER: ${{ secrets.DATACITE_USER }}
       DATACITE_P: ${{ secrets.DATACITE_P }}
