@@ -3,7 +3,7 @@
   "id": "water-level-amazon-itapeua-ridesat",
   "stac_version": "1.0.0",
   "description": "prova gffggggggg update",
-  "sci:citation": "Vega GC, Pertierra LR, Olalla-Tárraga MÁ (2017) Data from: MERRAclim, a high-resolution global dataset of remotely sensed bioclimatic variables for ecological modelling. Dryad Digital Repository.",
+  "sci:citation": "Vega GC, Pertierra LR, Olalla-T\u00e1rraga M\u00c1 (2017) Data from: MERRAclim, a high-resolution global dataset of remotely sensed bioclimatic variables for ecological modelling. Dryad Digital Repository.",
   "links": [
     {
       "rel": "root",
@@ -144,18 +144,28 @@
     "Surface Water",
     "Surface Water Processes/Measurements"
   ],
-   "providers": [{
-            "url": "https://land.copernicus.eu/en/products/soil-moisture/daily-surface-soil-moisture-v1.0",
-            "name": "Copernicus Land Monitoring Service",
-            "roles": ["producer"]
-        }, {
-            "url": "https://www.copernicus.eu/en",
-            "name": "Copernicus",
-            "roles": ["licensor"]
-        }, {
-            "url": "http://www.eurac.edu",
-            "name": "Eurac Research - Institute for Earth Observation",
-            "roles": ["host"]
-        }
-    ]
+  "providers": [
+    {
+      "url": "https://land.copernicus.eu/en/products/soil-moisture/daily-surface-soil-moisture-v1.0",
+      "name": "Copernicus Land Monitoring Service",
+      "roles": [
+        "producer"
+      ]
+    },
+    {
+      "url": "https://www.copernicus.eu/en",
+      "name": "Copernicus",
+      "roles": [
+        "licensor"
+      ]
+    },
+    {
+      "url": "http://www.eurac.edu",
+      "name": "Eurac Research - Institute for Earth Observation",
+      "roles": [
+        "host"
+      ]
+    }
+  ],
+  "sci:doi": "10.80823/xpg9-q857"
 }
