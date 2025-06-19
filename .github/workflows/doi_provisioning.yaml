@@ -68,7 +68,7 @@ jobs:
           git commit -m "upload new file" || echo "Nessuna modifica da committare"
 
           # Aggiungi il secondo remote (usa un token sicuro)
-          git remote add secondary https://$viatoken@github.com/ESA-EarthCODE/open-science-catalog-doi-provisioning.git
+          git remote add secondary https://$via_token@github.com/ESA-EarthCODE/open-science-catalog-doi-provisioning.git
 
           # Push al repository principale
           git push origin main
