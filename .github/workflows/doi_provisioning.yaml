@@ -1,4 +1,3 @@
-
 name: Run DOI Provisioning
 
 on:
@@ -11,9 +10,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  run-script:
     runs-on: ubuntu-latest
-   
+    env:
+      DATACITE_USER: ${{ secrets.DATACITE_USER }}
+      DATACITE_P: ${{ secrets.DATACITE_P }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,7 +33,7 @@ jobs:
           echo "🔍 Cerco file .json nel commit corrente..."
           FILE=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep '\.json$' | head -n 1)
           if [ -z "$FILE" ]; then
-            echo "⚠️ Nessun file JSON trovato nel commit ${{ github.sha }}"
+            echo "⚠️ Nessun file JSON trovato nel commit ${GITHUB_SHA}"
           else
             echo "✅ Trovato file JSON: $FILE"
             echo "json_file=$FILE" >> $GITHUB_OUTPUT
@@ -44,6 +46,7 @@ jobs:
             pip install -r requirements.txt
           else
             echo "⚠️ requirements.txt non trovato, salto l'installazione."
+          fi
 
       - name: Run metadata DOI provisioning script
         run: |
@@ -52,6 +55,7 @@ jobs:
             python ./procedures/metadata_doi_provisioning.py "${{ steps.get_json.outputs.json_file }}"
           else
             echo "⏭️ Nessun file JSON da elaborare, lo script non verrà eseguito."
+          fi
 
       - name: Commit and push changes
         run: |
