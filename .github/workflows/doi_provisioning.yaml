@@ -10,6 +10,10 @@ on:
   workflow_dispatch:
 
 jobs:
+  deploy:
+      permissions:
+        contents: write
+
   run-script:
     runs-on: ubuntu-latest
     env:
