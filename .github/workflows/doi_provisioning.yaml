@@ -1,4 +1,3 @@
-
 name: Run DOI Provisioning
 
 on:
@@ -12,10 +11,9 @@ on:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -34,7 +32,7 @@ jobs:
           echo "🔍 Cerco file .json nel commit corrente..."
           FILE=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | grep '\.json$' | head -n 1)
           if [ -z "$FILE" ]; then
-            echo "⚠️ Nessun file JSON trovato nel commit ${GITHUB_SHA}"
+            echo "⚠️ Nessun file JSON trovato nel commit ${{ github.sha }}"
           else
             echo "✅ Trovato file JSON: $FILE"
             echo "json_file=$FILE" >> $GITHUB_OUTPUT
