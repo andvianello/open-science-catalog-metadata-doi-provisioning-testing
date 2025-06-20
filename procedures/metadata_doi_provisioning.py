@@ -293,7 +293,7 @@ if __name__ == '__main__':
           printLog("Error in inserting doi in json metadata")
           exit -1
     else:
-      printLog("doi already exists: " + mtd_fields["doi"])
+      printLog("doi: " + mtd_fields["doi"])
 
       doi_prefix_mtd = extractPrefix(mtd_fields["doi"])
 
