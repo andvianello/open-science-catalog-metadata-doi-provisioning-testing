@@ -1,0 +1,128 @@
+{
+  "type": "Collection",
+  "id": "baltic-sea-surface-salinity-l3-baltic-salinity-dynamics",
+  "stac_version": "1.0.0",
+  "description": "To develop a novel Baltic L3 SSS (Sea Surface Salinity) product from the measurements provided by the SMOS (Soil Moisture and Ocean Salinity) mission and to study the potential benefit of incorporating this SSS product into oceanographic and environmental applications within the Baltic Sea. Data acquisition: Satellite ESA SMOS mission (Soil Moisture and Ocean Salinity). Time coverage 05 February 2011 - 27 December 2019. Time resolution: 9 days. Maps frequency generation: Daily. Spatial coverage: Latitude range: 53.5°N-68°N Longitude range: 8°E-30.5°E. Spatial resolution: 0.25 degrees. Spatial grid: WGS 84 / Regular longitude-latitude. Sensor Satellite SMOS / MIRAS. Format NetCDF. Climate and Forecast (CF) conventions version: 1.6. ",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "via",
+      "href": "https://digital.csic.es/handle/10261/239764",
+      "title": "Access"
+    },
+    {
+      "rel": "cite-as",
+      "href": "https://doi.org/10.20350/digitalCSIC/13859",
+      "title": "DOI"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Products"
+    },
+    {
+      "rel": "related",
+      "href": "../../projects/baltic-salinity-dynamics/collection.json",
+      "type": "application/json",
+      "title": "Project: BALTIC+ Salinity Dynamics"
+    },
+    {
+      "rel": "related",
+      "href": "../../themes/oceans/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Oceans"
+    },
+    {
+      "rel": "related",
+      "href": "../../variables/sea-surface-salinity/catalog.json",
+      "type": "application/json",
+      "title": "Variable: Sea Surface Salinity"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/smos/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: SMOS"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/smap/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: SMAP"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/baltic-sea-surface-salinity-l3-baltic-salinity-dynamics/collection.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
+  ],
+  "osc:project": "baltic-salinity-dynamics",
+  "osc:status": "ongoing",
+  "osc:region": "Baltics",
+  "osc:type": "product",
+  "created": "2021-01-19T00:00:00Z",
+  "version": "2",
+  "sci:doi": "10.20350/digitalCSIC/13859",
+  "cf:parameter": [
+    {
+      "name": "sea_surface_salinity"
+    }
+  ],
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "oceans"
+        }
+      ]
+    }
+  ],
+  "osc:variables": [
+    "sea-surface-salinity"
+  ],
+  "osc:missions": [
+    "smos",
+    "smap"
+  ],
+  "updated": "2024-09-12T20:32:06.210108Z",
+  "title": "TEST NEW 1: Baltic Sea Surface Salinity L3 maps (V.2.0)_Baltics_Multimission",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          9.0405918788,
+          53.8666553578,
+          31.3371258934,
+          66.1535071282
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2011-01-01T00:00:00Z",
+          "2019-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [
+    "Salinity/Density",
+    "Sea Surface Salinity",
+    "Sea Ice"
+  ]
+}
