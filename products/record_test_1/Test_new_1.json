@@ -1,8 +1,9 @@
 {
   "type": "Collection",
-  "id": "baltic-sea-surface-salinity-l3-baltic-salinity-dynamics",
+  "id": "water-level-amazon-itapeua-ridesat",
   "stac_version": "1.0.0",
-  "description": "To develop a novel Baltic L3 SSS (Sea Surface Salinity) product from the measurements provided by the SMOS (Soil Moisture and Ocean Salinity) mission and to study the potential benefit of incorporating this SSS product into oceanographic and environmental applications within the Baltic Sea. Data acquisition: Satellite ESA SMOS mission (Soil Moisture and Ocean Salinity). Time coverage 05 February 2011 - 27 December 2019. Time resolution: 9 days. Maps frequency generation: Daily. Spatial coverage: Latitude range: 53.5°N-68°N Longitude range: 8°E-30.5°E. Spatial resolution: 0.25 degrees. Spatial grid: WGS 84 / Regular longitude-latitude. Sensor Satellite SMOS / MIRAS. Format NetCDF. Climate and Forecast (CF) conventions version: 1.6. ",
+  "description": "prova update",
+  "sci:citation": "Vega GC, Pertierra LR, Olalla-T\u00e1rraga M\u00c1 (2017) Data from: MERRAclim, a high-resolution global dataset of remotely sensed bioclimatic variables for ecological modelling. Dryad Digital Repository.",
   "links": [
     {
       "rel": "root",
@@ -12,13 +13,13 @@
     },
     {
       "rel": "via",
-      "href": "https://digital.csic.es/handle/10261/239764",
+      "href": "https://www.dropbox.com/s/kbddiybsp7agrmn/Level3_Product.rar?dl=0",
       "title": "Access"
     },
     {
-      "rel": "cite-as",
-      "href": "https://doi.org/10.20350/digitalCSIC/13859",
-      "title": "DOI"
+      "rel": "via",
+      "href": "http://hydrology.irpi.cnr.it/projects/ridesat/",
+      "title": "Documentation"
     },
     {
       "rel": "parent",
@@ -28,56 +29,71 @@
     },
     {
       "rel": "related",
-      "href": "../../projects/baltic-salinity-dynamics/collection.json",
+      "href": "../../projects/ridesat-river-flow-monitoring-and-discharge-estimation-by-integrating-multiple-satellite-data/collection.json",
       "type": "application/json",
-      "title": "Project: BALTIC+ Salinity Dynamics"
+      "title": "Project: RIDESAT"
     },
     {
       "rel": "related",
-      "href": "../../themes/oceans/catalog.json",
+      "href": "../../themes/land/catalog.json",
       "type": "application/json",
-      "title": "Theme: Oceans"
+      "title": "Theme: Land"
     },
     {
       "rel": "related",
-      "href": "../../variables/sea-surface-salinity/catalog.json",
+      "href": "../../variables/surface-water-processes-measurements/catalog.json",
       "type": "application/json",
-      "title": "Variable: Sea Surface Salinity"
+      "title": "Variable: Surface Water Processes/Measurements"
     },
     {
       "rel": "related",
-      "href": "../../eo-missions/smos/catalog.json",
+      "href": "../../eo-missions/sentinel-3/catalog.json",
       "type": "application/json",
-      "title": "EO Mission: SMOS"
+      "title": "EO Mission: Sentinel-3"
     },
     {
       "rel": "related",
-      "href": "../../eo-missions/smap/catalog.json",
+      "href": "../../eo-missions/saral/catalog.json",
       "type": "application/json",
-      "title": "EO Mission: SMAP"
+      "title": "EO Mission: SARAL"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/cryosat-2/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: CryoSat-2"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/terra/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: Terra"
+    },
+    {
+      "rel": "related",
+      "href": "../../eo-missions/aqua-eos-pm-1/catalog.json",
+      "type": "application/json",
+      "title": "EO Mission: AQUA (EOS/PM-1)"
     },
     {
       "rel": "self",
-      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/baltic-sea-surface-salinity-l3-baltic-salinity-dynamics/collection.json",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/water-level-amazon-itapeua-ridesat/collection.json",
       "type": "application/json"
     }
   ],
   "stac_extensions": [
     "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
-    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/cf/v0.2.0/schema.json"
   ],
-  "osc:project": "baltic-salinity-dynamics",
+  "osc:project": "ridesat-river-flow-monitoring-and-discharge-estimation-by-integrating-multiple-satellite-data",
   "osc:status": "ongoing",
-  "osc:region": "Baltics",
+  "osc:region": "South America",
   "osc:type": "product",
-  "created": "2021-01-19T00:00:00Z",
-  "version": "2",
-  "sci:doi": "10.20350/digitalCSIC/13859",
+  "created": "2020-03-02T00:00:00Z",
   "cf:parameter": [
     {
-      "name": "sea_surface_salinity"
+      "name": "water_level"
     }
   ],
   "themes": [
@@ -85,35 +101,38 @@
       "scheme": "https://github.com/stac-extensions/osc#theme",
       "concepts": [
         {
-          "id": "oceans"
+          "id": "land"
         }
       ]
     }
   ],
   "osc:variables": [
-    "sea-surface-salinity"
+    "surface-water-processes-measurements"
   ],
   "osc:missions": [
-    "smos",
-    "smap"
+    "sentinel-3",
+    "saral",
+    "cryosat-2",
+    "terra",
+    "aqua-eos-pm-1"
   ],
-  "updated": "2024-09-12T20:32:06.210108Z",
-  "title": "TEST NEW 1: Baltic Sea Surface Salinity L3 maps (V.2.0)_Baltics_Multimission",
+  "updated": "2024-09-12T20:32:06.251108Z",
+  "title": "TEST New 1: - Water level from altimetry_Temporal series_L3 Products Database_Amazon Itapeua_Multimission",
   "extent": {
     "spatial": {
       "bbox": [
         [
-          9.0405918788,
-          53.8666553578,
-          31.3371258934,
-          66.1535071282
+          -63.0278,
+          -4.057,
+          -63.0278,
+          -4.057
         ]
       ]
     },
     "temporal": {
       "interval": [
         [
-          "2011-01-01T00:00:00Z",
+          "2016-01-01T00:00:00Z",
           "2019-12-31T23:59:59Z"
         ]
       ]
@@ -121,8 +140,31 @@
   },
   "license": "proprietary",
   "keywords": [
-    "Salinity/Density",
-    "Sea Surface Salinity",
-    "Sea Ice"
-  ]
+    "Terrestrial Hydrosphere",
+    "Surface Water",
+    "Surface Water Processes/Measurements"
+  ],
+  "providers": [
+    {
+      "url": "https://land.copernicus.eu/en/products/soil-moisture/daily-surface-soil-moisture-v1.0",
+      "name": "Copernicus Land Monitoring Service",
+      "roles": [
+        "producer"
+      ]
+    },
+    {
+      "url": "https://www.copernicus.eu/en",
+      "name": "Copernicus",
+      "roles": [
+        "licensor"
+      ]
+    },
+    {
+      "url": "http://www.eurac.edu",
+      "name": "Eurac Research - Institute for Earth Observation",
+      "roles": [
+        "host"
+      ]
+    }
+  ],
 }
