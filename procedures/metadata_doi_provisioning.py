@@ -78,10 +78,6 @@ def retrieveDoiMtd(doi_val):
 
 def isDoiMtdUpToDate(mtd_map, doi_map):
   printLog("checking if datacite metadata is up to date")
-  #printLog("mtd_map:")
-  #printLog(mtd_map)
-  #printLog("doi_map:")
-  #printLog(doi_map)
   is_up_to_date = (mtd_map["publ_year"] == (doi_map["data"]["attributes"]["publicationYear"]))
   is_up_to_date = is_up_to_date and ((mtd_map["title"] == (doi_map["data"]["attributes"]["titles"][0]["title"])))
   print("is_up_to_date: " + str(is_up_to_date))
@@ -160,7 +156,7 @@ def postDoiMtdUpdate(doi_id, mtd_map):
     "data": {
       "type": "dois",
       "attributes": {
-        "publicationYear": publ_year_p
+        "publicationYear": "publ_year_p"
       }
     }
   }
@@ -198,9 +194,6 @@ def insertDoi(json_file_name, doi_val):
       data["sci:doi"] = doi_val
       
       modified_json = json.dumps(data, indent=2)
-
-    #printLog("modified_json:")
-    #printLog(modified_json)
 
     if(writeMtdToNewFile):
       json_file_name = json_file_name + "TEST"
