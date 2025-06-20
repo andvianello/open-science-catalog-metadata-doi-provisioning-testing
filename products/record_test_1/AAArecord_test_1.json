@@ -117,7 +117,7 @@
     "aqua-eos-pm-1"
   ],
   "updated": "2024-09-12T20:32:06.251108Z",
-  "title": "PROVA 3 - Water level from altimetry_Temporal series_L3 Products Database_Amazon Itapeua_Multimission",
+  "title": "NEW TEST last - Water level from altimetry_Temporal series_L3 Products Database_Amazon Itapeua_Multimission",
   "extent": {
     "spatial": {
       "bbox": [
@@ -166,6 +166,5 @@
         "host"
       ]
     }
-  ],
-  "sci:doi": "10.80823/xpg9-q857"
+  ]
 }
